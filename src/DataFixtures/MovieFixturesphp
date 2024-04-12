@@ -1,0 +1,38 @@
+<?php
+
+namespace App\DataFixtures;
+
+use App\Entity\Movie;
+use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+
+class MovieFixtures extends Fixture
+{
+    public function load(ObjectManager $manager): void
+    {
+       $movie = new Movie();
+       $movie->setTitle("The Green Mile");
+       $movie->setReleaseYear(1999);
+       $movie->setDescription("La Ligne verte décrit un univers étouffant et brutal où la défiance est la règle. Personne ne sort indemne de cette prison coupée du monde. Aux frontières du film noir, fantastique et traumatisant, ce film est aussi une brillante réflexion sur la peine de mort. Ce film, issu d'un roman-feuilleton de Stephen King édité en 1996, est différent de ses habituelles incursions dans l'horreur. Le film est régulièrement reconnu comme terriblement efficace et dérangeant par les critiques1.");
+       $movie->setImagePath('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsimkl.in%2Ffanart%2F10%2F102270663c6b360089_medium.jpg&f=1&nofb=1&ipt=f9517dde3b61077ddd38a0646836376eb8550c6acdfe84903668925a4e9bf441&ipo=images');
+       $manager->persist($movie);
+
+       $movie2 = new Movie();
+       $movie2->setTitle("Ghost");
+       $movie2->setReleaseYear(1990);
+       $movie2->setDescription(" un banquier assassiné forcé de rester sur Terre sous la forme d'un fantôme jusqu'à ce qu'il arrive à démêler les raisons de son meurtre, obtenant dans l’intervalle l'aide d'une voyante excentrique, Oda Mae Brown");
+       $movie->setImagePath('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fxl.movieposterdb.com%2F11_09%2F1990%2F99653%2Fxl_99653_f34bc19d.jpg&f=1&nofb=1&ipt=334bbe1c1dfb001cec8239a1ad88389e963c5ae1dfe062a1ca2101d913027b17&ipo=images');
+       $manager->persist($movie2);
+
+       $movie3 = new Movie();
+       $movie3->setTitle("Titanic");
+       $movie3->setReleaseYear(1997);
+       $movie3->setDescription(" Le RMS Titanic est un paquebot transatlantique britannique qui a fait naufrage dans l'océan Atlantique Nord en 1912 à la suite d'une collision avec un iceberg, lors de son voyage inaugural de Southampton à New York.");
+       $movie->setImagePath('https://cdn.pixabay.com/photo/2022/01/27/17/51/titanic-6972725_960_720.jpg');
+       $manager->persist($movie3);
+
+       $manager->flush();
+       
+
+    }
+}

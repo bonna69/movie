@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+     {% for movie in moviesTwig %}
+     {{movie.id}}
+     {%else%}
+     <h1>pas de film</h1>
+     {%endfor%}
+{% endblock %}
